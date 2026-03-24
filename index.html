@@ -2,7 +2,10 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
     <title>Guardian — Protección inteligente</title>
 
     <!-- Google Fonts -->
@@ -25,30 +28,17 @@
       <!-- Header -->
       <header>
         <div class="wordmark">
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 28 28"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M14 2L4 6.5V13C4 18.25 8.4 23.22 14 25C19.6 23.22 24 18.25 24 13V6.5L14 2Z"
-              stroke="#f0f0f0"
-              stroke-width="1.2"
-            />
-            <path
-              d="M9.5 14L12.5 17L18.5 11"
-              stroke="#f0f0f0"
-              stroke-width="1.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          <span class="wordmark-text">Guardian</span>
+          <img src="logo.png" alt="Guardian Logo" class="logo" />
         </div>
 
-        <h1>Detecta estafas <em>al instante</em></h1>
+        <h1>
+          Detecta
+          <span class="dynamic-word-wrap"
+            ><span class="dynamic-word" id="dynamic-word">estafas</span></span
+          >
+          al instante
+        </h1>
+
         <p class="subtitle">
           Pega cualquier mensaje sospechoso y obtén un análisis de seguridad
           avanzado en segundos.
@@ -342,65 +332,57 @@
       </div>
       <!-- /#result-section -->
 
-      <!-- ── Example messages ────────────────────────────────── -->
-      <div class="examples-section">
-        <p class="section-label">Prueba con ejemplos</p>
-        <div class="examples-grid">
-          <div
-            class="example-card"
-            onclick="loadExample('phishing1')"
-            role="button"
-            tabindex="0"
-          >
-            <div class="example-type danger">Phishing bancario</div>
-            <div class="example-preview">
-              Su cuenta Bancomer ha sido SUSPENDIDA. Verifique sus datos o
-              perderá el acceso permanente…
-            </div>
-          </div>
+      <!-- ── Example messages ── -->
+<div class="examples-section">
+  <p class="section-label">Prueba con ejemplos</p>
+  <div class="examples-grid">
 
-          <div
-            class="example-card"
-            onclick="loadExample('safe1')"
-            role="button"
-            tabindex="0"
-          >
-            <div class="example-type safe">Mensaje legítimo</div>
-            <div class="example-preview">
-              Tu pedido #4821 fue enviado con éxito. Llega el jueves entre 10am
-              y 2pm. ¡Gracias!
-            </div>
-          </div>
-
-          <div
-            class="example-card"
-            onclick="loadExample('suspicious1')"
-            role="button"
-            tabindex="0"
-          >
-            <div class="example-type suspicious">Premio sospechoso</div>
-            <div class="example-preview">
-              ¡FELICIDADES! Fuiste seleccionado ganador de $5,000. Reclama tu
-              premio antes de hoy…
-            </div>
-          </div>
-
-          <div
-            class="example-card"
-            onclick="loadExample('phishing2')"
-            role="button"
-            tabindex="0"
-          >
-            <div class="example-type danger">Suplantación Netflix</div>
-            <div class="example-preview">
-              Inicio de sesión inusual detectado. Protege tu cuenta:
-              netflix-verify.secure-login-mx.com…
-            </div>
-          </div>
+    <div class="example-card danger" onclick="loadExample('phishing1')" role="button" tabindex="0">
+      <div class="example-card-inner">
+        <div class="example-header">
+          <span class="example-dot"></span>
+          <span class="example-type">Phishing bancario</span>
+          <span class="example-arrow">↗</span>
         </div>
+        <p class="example-preview">Su cuenta Bancomer ha sido SUSPENDIDA. Verifique sus datos o perderá el acceso permanente…</p>
       </div>
     </div>
-    <!-- /.container -->
+
+    <div class="example-card safe" onclick="loadExample('safe1')" role="button" tabindex="0">
+      <div class="example-card-inner">
+        <div class="example-header">
+          <span class="example-dot"></span>
+          <span class="example-type">Mensaje legítimo</span>
+          <span class="example-arrow">↗</span>
+        </div>
+        <p class="example-preview">Tu pedido #4821 fue enviado con éxito. Llega el jueves entre 10am y 2pm. ¡Gracias!</p>
+      </div>
+    </div>
+
+    <div class="example-card suspicious" onclick="loadExample('suspicious1')" role="button" tabindex="0">
+      <div class="example-card-inner">
+        <div class="example-header">
+          <span class="example-dot"></span>
+          <span class="example-type">Premio sospechoso</span>
+          <span class="example-arrow">↗</span>
+        </div>
+        <p class="example-preview">¡FELICIDADES! Fuiste seleccionado ganador de $5,000. Reclama tu premio antes de hoy…</p>
+      </div>
+    </div>
+
+    <div class="example-card danger" onclick="loadExample('phishing2')" role="button" tabindex="0">
+      <div class="example-card-inner">
+        <div class="example-header">
+          <span class="example-dot"></span>
+          <span class="example-type">Suplantación Netflix</span>
+          <span class="example-arrow">↗</span>
+        </div>
+        <p class="example-preview">Inicio de sesión inusual detectado. Protege tu cuenta: netflix-verify.secure-login-mx.com…</p>
+      </div>
+    </div>
+
+  </div>
+</div>
 
     <!-- ── Footer ─────────────────────────────────────────────── -->
     <footer>

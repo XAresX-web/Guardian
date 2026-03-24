@@ -85,6 +85,38 @@ const RISK_ES = {
   high: "Alto",
 };
 
+/* ── Palabra dinámica ── */
+const words = [
+  "estafas",
+  "phishing",
+  "fraudes",
+  "engaños",
+  "amenazas",
+  "smishing",
+  "malware",
+  "trampas",
+];
+
+let current = 0;
+const el = document.getElementById("dynamic-word");
+
+function cycleWord() {
+  // Salida
+  el.classList.remove("enter");
+  el.classList.add("exit");
+
+  setTimeout(() => {
+    current = (current + 1) % words.length;
+    el.textContent = words[current];
+
+    // Entrada
+    el.classList.remove("exit");
+    el.classList.add("enter");
+  }, 400);
+}
+
+setInterval(cycleWord, 2800);
+
 /* ── State ────────────────────────────────────────────────── */
 let currentTab = "SMS";
 
