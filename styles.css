@@ -129,15 +129,15 @@ h1 em {
   display: inline-block;
   position: relative;
   vertical-align: baseline;
+  min-width: 5px;
 }
 
 .dynamic-word {
-  color: #00ff88;
+  color: #ff3b3b;
   font-weight: 500;
   font-family: "Source Code Pro", monospace;
-  text-shadow:
-    0 0 6px rgba(0, 255, 136, 0.7),
-    0 0 12px rgba(0, 255, 136, 0.4);
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 5px rgba(255, 59, 59, 0.5);
 }
 
 /* Estado: saliendo */
