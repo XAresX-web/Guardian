@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guardian — Protección inteligente</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ── Ambient effects ──────────────────────────────────── -->
+    <div class="noise"></div>
+    <div class="glow"></div>
+
+    <!-- ── Main container ───────────────────────────────────── -->
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <div class="wordmark">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 28 28"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M14 2L4 6.5V13C4 18.25 8.4 23.22 14 25C19.6 23.22 24 18.25 24 13V6.5L14 2Z"
+              stroke="#f0f0f0"
+              stroke-width="1.2"
+            />
+            <path
+              d="M9.5 14L12.5 17L18.5 11"
+              stroke="#f0f0f0"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span class="wordmark-text">Guardian</span>
+        </div>
+
+        <h1>Detecta estafas <em>al instante</em></h1>
+        <p class="subtitle">
+          Pega cualquier mensaje sospechoso y obtén un análisis de seguridad
+          avanzado en segundos.
+        </p>
+        <div class="privacy-badge">
+          Tu información no se almacena ni se comparte
+        </div>
+      </header>
+
+      <!-- ── Input card ──────────────────────────────────────── -->
+      <div class="card" id="input-card">
+        <div class="textarea-wrap">
+          <!-- Source type tabs -->
+          <div class="source-tabs" role="tablist" aria-label="Tipo de mensaje">
+            <button class="tab active" role="tab" onclick="setTab(this, 'SMS')">
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M2 3.5A1.5 1.5 0 0 1 3.5 2h9A1.5 1.5 0 0 1 14 3.5v6A1.5 1.5 0 0 1 12.5 11H9l-3 3v-3H3.5A1.5 1.5 0 0 1 2 9.5v-6z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              SMS
+            </button>
+
+            <button class="tab" role="tab" onclick="setTab(this, 'WhatsApp')">
+              <svg viewBox="0 0 16 16" fill="currentColor">
+                <path
+                  d="M8 1a7 7 0 0 0-6.07 10.47L1 15l3.64-.94A7 7 0 1 0 8 1zm0 1.27a5.73 5.73 0 1 1-2.94 10.67l-.21-.12-2.16.56.57-2.1-.13-.22A5.73 5.73 0 0 1 8 2.27zm-2.3 2.9c-.12 0-.32.05-.49.24-.17.19-.65.63-.65 1.54s.67 1.79.76 1.91c.1.12 1.3 2.05 3.19 2.79.45.19.8.3 1.07.39.45.14.86.12 1.18.07.36-.05 1.1-.45 1.26-.88.15-.43.15-.8.1-.88-.05-.07-.17-.12-.36-.21-.19-.1-1.1-.54-1.27-.6-.17-.07-.29-.1-.41.1-.12.19-.47.6-.58.72-.1.12-.21.13-.4.04-.19-.1-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.3.08-.39.09-.09.19-.23.29-.34.09-.12.12-.19.19-.32.06-.12.03-.23-.02-.32-.05-.1-.41-1-.56-1.36-.15-.37-.3-.31-.41-.32h-.35z"
+                />
+              </svg>
+              WhatsApp
+            </button>
+
+            <button class="tab" role="tab" onclick="setTab(this, 'Correo')">
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <rect x="2" y="4" width="12" height="9" rx="1.5" />
+                <path d="M2 5.5l6 4 6-4" stroke-linecap="round" />
+              </svg>
+              Correo
+            </button>
+
+            <button class="tab" role="tab" onclick="setTab(this, 'Web')">
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <circle cx="8" cy="8" r="5.5" />
+                <path
+                  d="M2.5 8h11M8 2.5c-2 1.5-2 7.5 0 11M8 2.5c2 1.5 2 7.5 0 11"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Web
+            </button>
+
+            <button class="tab" role="tab" onclick="setTab(this, 'Otro')">
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <circle
+                  cx="8"
+                  cy="8"
+                  r="1.2"
+                  fill="currentColor"
+                  stroke="none"
+                />
+                <circle
+                  cx="8"
+                  cy="3.5"
+                  r="1.2"
+                  fill="currentColor"
+                  stroke="none"
+                />
+                <circle
+                  cx="8"
+                  cy="12.5"
+                  r="1.2"
+                  fill="currentColor"
+                  stroke="none"
+                />
+              </svg>
+              Otro
+            </button>
+          </div>
+
+          <textarea
+            id="message-input"
+            placeholder="Pega aquí el mensaje que quieres analizar…"
+            spellcheck="false"
+            aria-label="Mensaje a analizar"
+          ></textarea>
+        </div>
+
+        <div class="card-footer">
+          <span class="char-count" id="char-count">0 caracteres</span>
+
+          <button
+            class="analyze-btn"
+            id="analyze-btn"
+            onclick="analyzeMessage()"
+          >
+            <span class="spinner" aria-hidden="true"></span>
+            <span class="btn-label">
+              Analizar mensaje
+              <svg
+                class="btn-icon"
+                viewBox="0 0 16 16"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 8H13M13 8L9 4M13 8L9 12"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ── Analyzing overlay ───────────────────────────────── -->
+      <div
+        class="analyzing-overlay"
+        id="analyzing-overlay"
+        role="status"
+        aria-live="polite"
+      >
+        <div class="loading-dots" aria-hidden="true">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <p class="analyzing-label">
+          Analizando con motor avanzado de detección…
+        </p>
+      </div>
+
+      <!-- ── Result section ─────────────────────────────────── -->
+      <div class="result" id="result-section" aria-live="polite">
+        <!-- Risk header -->
+        <div class="risk-header" id="risk-header">
+          <div class="risk-indicator" id="risk-indicator">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 22 22"
+              fill="none"
+              id="risk-icon"
+              aria-hidden="true"
+            ></svg>
+          </div>
+
+          <div class="risk-label">
+            <div class="risk-level" id="risk-level">—</div>
+            <div class="risk-headline" id="risk-headline">—</div>
+          </div>
+
+          <div class="risk-score-wrap">
+            <span class="risk-score" id="risk-score">—</span>
+            <span class="confidence-label" id="confidence-label"
+              >confianza —%</span
+            >
+          </div>
+        </div>
+
+        <!-- Result body -->
+        <div class="result-body" id="result-body">
+          <!-- Attack type -->
+          <div class="section-tag">Tipo de ataque detectado</div>
+          <div class="attack-types" id="attack-types"></div>
+
+          <!-- Summary -->
+          <div class="section-tag">Resumen del análisis</div>
+          <p class="explanation" id="explanation">—</p>
+
+          <!-- Detailed analysis -->
+          <div class="section-tag">Análisis detallado</div>
+          <div class="detail-grid">
+            <div class="detail-card">
+              <div class="detail-card-label">Ingeniería social</div>
+              <div class="detail-card-text" id="detail-social">—</div>
+            </div>
+            <div class="detail-card">
+              <div class="detail-card-label">Riesgo técnico</div>
+              <div class="detail-card-text" id="detail-tech">—</div>
+            </div>
+            <div class="detail-card">
+              <div class="detail-card-label">Intención del atacante</div>
+              <div class="detail-card-text" id="detail-intent">—</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Signals -->
+          <div class="section-tag">Señales detectadas</div>
+          <div class="signals" id="signals-list"></div>
+
+          <!-- User risk -->
+          <div class="section-tag">Exposición de riesgo</div>
+          <div class="user-risk-grid">
+            <div class="risk-metric">
+              <div class="risk-metric-label">Datos personales</div>
+              <div class="risk-metric-value" id="risk-data">—</div>
+            </div>
+            <div class="risk-metric">
+              <div class="risk-metric-label">Riesgo económico</div>
+              <div class="risk-metric-value" id="risk-financial">—</div>
+            </div>
+            <div class="risk-metric">
+              <div class="risk-metric-label">Robo de cuenta</div>
+              <div class="risk-metric-value" id="risk-account">—</div>
+            </div>
+          </div>
+
+          <!-- URL analysis (shown only when a URL is detected) -->
+          <div id="url-section" style="display: none">
+            <div class="section-tag">Análisis de enlace</div>
+            <div class="url-block">
+              <div class="url-header">
+                <span class="url-label">Enlace detectado en el mensaje</span>
+                <div class="url-status" id="url-status"></div>
+              </div>
+              <div id="url-reasons"></div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Recommendation -->
+          <div class="section-tag">Qué hacer ahora</div>
+          <div class="recommendation" id="recommendation">
+            <div class="rec-primary" id="rec-primary">—</div>
+            <div class="rec-secondary" id="rec-secondary"></div>
+            <div
+              class="safe-alternative"
+              id="safe-alternative"
+              style="display: none"
+            ></div>
+          </div>
+
+          <!-- Educational note -->
+          <p class="educational-note" id="educational-note">—</p>
+
+          <!-- Reset -->
+          <button class="reset-btn" onclick="resetApp()">
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 13 13"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M2 6.5C2 4 4 2 6.5 2C8.5 2 10.2 3.2 10.8 5M11 6.5C11 9 9 11 6.5 11C4.5 11 2.8 9.8 2.2 8"
+                stroke="currentColor"
+                stroke-width="1.2"
+                stroke-linecap="round"
+              />
+              <path
+                d="M10 2V5H7"
+                stroke="currentColor"
+                stroke-width="1.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Analizar otro mensaje
+          </button>
+        </div>
+        <!-- /.result-body -->
+      </div>
+      <!-- /#result-section -->
+
+      <!-- ── Example messages ────────────────────────────────── -->
+      <div class="examples-section">
+        <p class="section-label">Prueba con ejemplos</p>
+        <div class="examples-grid">
+          <div
+            class="example-card"
+            onclick="loadExample('phishing1')"
+            role="button"
+            tabindex="0"
+          >
+            <div class="example-type danger">Phishing bancario</div>
+            <div class="example-preview">
+              Su cuenta Bancomer ha sido SUSPENDIDA. Verifique sus datos o
+              perderá el acceso permanente…
+            </div>
+          </div>
+
+          <div
+            class="example-card"
+            onclick="loadExample('safe1')"
+            role="button"
+            tabindex="0"
+          >
+            <div class="example-type safe">Mensaje legítimo</div>
+            <div class="example-preview">
+              Tu pedido #4821 fue enviado con éxito. Llega el jueves entre 10am
+              y 2pm. ¡Gracias!
+            </div>
+          </div>
+
+          <div
+            class="example-card"
+            onclick="loadExample('suspicious1')"
+            role="button"
+            tabindex="0"
+          >
+            <div class="example-type suspicious">Premio sospechoso</div>
+            <div class="example-preview">
+              ¡FELICIDADES! Fuiste seleccionado ganador de $5,000. Reclama tu
+              premio antes de hoy…
+            </div>
+          </div>
+
+          <div
+            class="example-card"
+            onclick="loadExample('phishing2')"
+            role="button"
+            tabindex="0"
+          >
+            <div class="example-type danger">Suplantación Netflix</div>
+            <div class="example-preview">
+              Inicio de sesión inusual detectado. Protege tu cuenta:
+              netflix-verify.secure-login-mx.com…
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- ── Footer ─────────────────────────────────────────────── -->
+    <footer>
+      <div class="footer-inner">
+        <p class="footer-text">
+          Guardian usa inteligencia artificial avanzada para identificar
+          patrones de fraude digital en tiempo real. No almacena mensajes ni
+          datos personales. El análisis es orientativo; ante dudas, contacta
+          directamente con la entidad oficial.
+        </p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+  </body>
+</html>
