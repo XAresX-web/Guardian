@@ -1,19 +1,42 @@
 <!doctype html>
 <html lang="es">
   <head>
+    <!-- Meta básico -->
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0b0f" />
+    <meta name="description" content="Guardian — Protección inteligente contra fraudes, phishing y amenazas digitales." />
+
+    <!-- Título -->
     <title>Guardian — Protección inteligente</title>
 
-    <!-- Google Fonts -->
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Manifest (PWA ready) -->
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Preconnect (performance) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Open Graph -->
+<meta property="og:title" content="Guardian — Protección inteligente" />
+<meta property="og:description" content="Detecta fraudes, phishing y amenazas digitales en segundos." />
+<meta property="og:image" content="/preview.png" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
@@ -384,17 +407,44 @@
   </div>
 </div>
 
-    <!-- ── Footer ─────────────────────────────────────────────── -->
-    <footer>
-      <div class="footer-inner">
-        <p class="footer-text">
-          Guardian usa inteligencia artificial avanzada para identificar
-          patrones de fraude digital en tiempo real. No almacena mensajes ni
-          datos personales. El análisis es orientativo; ante dudas, contacta
-          directamente con la entidad oficial.
-        </p>
-      </div>
-    </footer>
+   <!-- ── Footer ─────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <svg class="footer-shield" viewBox="0 0 14 14" fill="none">
+        <path d="M7 1L12.5 3.5V7.5C12.5 10.2 10 12.5 7 13C4 12.5 1.5 10.2 1.5 7.5V3.5L7 1Z"
+              stroke="rgba(255,255,255,0.5)" stroke-width="0.8" fill="none"/>
+        <path d="M5 7L6.5 8.5L9.5 5.5"
+              stroke="rgba(255,255,255,0.5)" stroke-width="0.8"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="footer-brand-name">Guardian</span>
+    </div>
+
+    <p class="footer-text">
+      Guardian usa redes neuronales de ciberseguridad impulsadas con inteligencia artificial avanzada para identificar
+      patrones de fraude digital en tiempo real. No almacena mensajes ni
+      datos personales. El análisis es orientativo; ante dudas, contacta
+      directamente con la entidad oficial.
+    </p>
+
+    <div class="footer-pills">
+      <div class="footer-pill">Sin almacenamiento</div>
+      <div class="pill-sep"></div>
+      <div class="footer-pill">Análisis en tiempo real</div>
+      <div class="pill-sep"></div>
+      <div class="footer-pill">Privacidad garantizada</div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Guardian</span>
+      <div class="footer-sep"></div>
+      <span class="footer-author">Creado por <span>Hacker Ético Luis Sánchez</span></span>
+    </div>
+
+  </div>
+</footer>
 
     <!-- JavaScript -->
     <script src="app.js"></script>
